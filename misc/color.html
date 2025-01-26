@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script>
+    if (window.location.host.includes('.pages.dev')) { window.location.href = `https://ex3.lol${window.location.pathname}`; }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exerinity</title>
+    <meta name="title" content="exerinity" />
+    <meta name="description" content="Fill your screen with whatever color you provide in the parameters" />
+</head>
+
+<body>
+
+   <script>
+    function get(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    var color = get('color');
+
+    if (color) {
+        document.body.style.backgroundColor = '#' + color;
+    } else {
+        document.body.style.backgroundColor = '#808080';
+    }
+   </script>
+</body>
+
+</html>

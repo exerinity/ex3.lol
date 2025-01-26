@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script>
+    if (window.location.host.includes('.pages.dev')) { window.location.href = `https://ex3.lol${window.location.pathname}`; }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soulwax FM</title>
+    <meta name="title" content="Soulwax FM" />
+    <meta name="description" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ex3.lol/" />
+    <meta property="og:title" content="Soulwax FM" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="https://ex3.lol/favicon.ico" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ex3.lol/" />
+    <meta property="twitter:title" content="Soulwax FM" />
+    <meta property="twitter:description" content="" />
+    <meta property="twitter:image" content="https://ex3.lol/favicon.ico" />
+    <link rel="stylesheet" href="/files/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .highlight {
+            color: goldenrod
+        }
+
+        #tracklist {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h4><a href="/">exerinity</a></h4>
+        <br>
+        <ul>
+            <li><a href="/misc/email">email</a></li>
+            <li><a href="/">back</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1>Soulwax FM</h1>
+        <noscript>
+            <h2>JavaScript is disabled</h2>
+            <p>Please enable it to play this awesome array of tracks. <i><a href="https://www.enable-javascript.com/"
+                        style="text-decoration: underline;">How do I enable it?</a></i>
+                <br>If you can't, you can listen here: <a href="https://files.ex3.lol/SOULWAX_FM_FINAL_MIX.mp3"
+                    style="text-decoration: underline;">https://files.ex3.lol/SOULWAX_FM_FINAL_MIX.mp3</a>
+            </p>
+        </noscript>
+        <h2><i class="fa-solid fa-radio"></i> Tracklist:<br>
+            <footer style="font-size: 15px">(click on a track to jump to it)</footer>
+        </h2>
+        <ul id="tracklist">
+            <li id="track0">Intro</li>
+            <li id="track1">"Stock" by Palmbomen (Soulwax remix)</li>
+            <li id="track2">"Fatal Error" by Fatal Error</li>
+            <li id="track3">"Let's Beam Him Up" by Supersempfft</li>
+            <li id="track4">"Mingi" by Mim Suleiman</li>
+            <li id="track5">"The Strange Art" by FKCLUB (In Flagranti remix)</li>
+            <li id="track6">"El Sucu Tucu" by Matias Aguayo</li>
+            <li id="track7">"Naive Response" by Daniel Avery</li>
+            <li id="track8">"Gabriel" by Joe Goddard feat. Valentina (Soulwax Remix)</li>
+            <li id="track9">"Body Music" by Daniel Maloso</li>
+            <li id="track10">"Lazer Beams" by Green Velvet & Harvard Bass</li>
+            <li id="track11">"Tryouts" by Zombie Nation</li>
+            <li id="track12">"Nothing But Pleasure" by Tom Rowland</li>
+            <li id="track13">"Arp #1" by Jackson and his Computerband</li>
+            <li id="intms">Intermission</li>
+            <li id="track14">"Synrise" by Goose (Soulwax remix)</li>
+            <li id="track15">"Mr. Croissant Taker" by Transistorcake</li>
+            <li id="track16">"Plush" by Tiga (Jacques Lu Cont Remix)</li>
+            <li id="track17">"Shockwave" by The Hacker (Gesaffelstein Remix)</li>
+            <li id="track18">"After You" by Pulp (Soulwax Remix)</li>
+        </ul>
+        <audio autoplay loop style="width: 900px;" controls>
+            <source src="https://files.ex3.lol/SOULWAX_FM_FINAL_MIX.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <br><br>
+        <button onclick="rev()">Rewind 10s</button> <button id="stop" onclick="stop()">Stop</button> <button onclick="fwd()">Forward 10s</button>
+        <br><br>
+        <footer id="runtime">runtime: 0s</footer>
+        <footer id="runtime2">(0m 0s 0ms)</footer>
+        <footer style="font-size: 11px">^ this updates to your display's refresh rate, so its probably more accurate
+            than the actual player</footer><br><br><br><i>The timing may be inaccurate, or completely wrong. I'm
+            still working on it.</i><br>
+        <i>This content is owned by Rockstar Games from the video game Grand Theft Auto V.<br>For takedowns, please
+            consult the email link on the side of this page.</i>
+    </div>
+
+    <script>
+         function rev () {
+            const audio = document.querySelector('audio');
+            audio.currentTime -= 10;
+        }
+        function stop () {
+            const audio = document.querySelector('audio');
+            if (audio.paused) {
+                audio.currentTime = 0;
+            } else {
+                audio.pause();
+                document.getElementById('stop').textContent = 'Stop (press again to reset)';
+                setTimeout(() => {
+                    document.getElementById('stop').textContent = 'Stop';
+                }, 2100);
+            }
+        }
+        function fwd () {
+            const audio = document.querySelector('audio');
+            audio.currentTime += 10;
+        }
+        function runtime() {
+            const audio = document.querySelector('audio');
+            const runtime = document.getElementById('runtime');
+            runtime.textContent = `runtime: ${audio.currentTime.toFixed(0)}s`;
+        }
+        function runtime2() {
+            const audio = document.querySelector('audio');
+            const runtime = document.getElementById('runtime2');
+            const time = audio.currentTime;
+            const minutes = Math.floor(time / 60);
+            const seconds = Math.floor(time % 60);
+            const milliseconds = Math.floor((time - Math.floor(time)) * 1000);
+            runtime.textContent = `(${minutes}m ${seconds}s ${milliseconds}ms)`;
+        }
+        function update() {
+            runtime();
+            runtime2();
+            requestAnimationFrame(update);
+        }
+
+        requestAnimationFrame(update);
+        const tracks = [
+            { id: 'track0', start: 0, title: 'Intro' },
+            { id: 'track1', start: 16.63, title: '"Stock" by Palmbomen (Soulwax remix)' },
+            { id: 'track2', start: 160.5, title: '"Fatal Error" by Fatal Error' },
+            { id: 'track3', start: 291, title: '"Let\'s Beam Him Up" by Supersempfft' },
+            { id: 'track4', start: 370, title: '"Mingi" by Mim Suleiman' },
+            { id: 'track5', start: 509, title: '"The Strange Art" by FKCLUB (In Flagranti remix)' },
+            { id: 'track6', start: 639, title: '"El Sucu Tucu" by Matias Aguayo' },
+            { id: 'track7', start: 870.35, title: '"Naive Response" by Daniel Avery' },
+            { id: 'track8', start: 967, title: '"Gabriel" by Joe Goddard feat. Valentina (Soulwax Remix)' },
+            { id: 'track9', start: 1150, title: '"Body Music" by Daniel Maloso' },
+            { id: 'track10', start: 1261, title: '"Lazer Beams" by Green Velvet & Harvard Bass' },
+            { id: 'track11', start: 1394, title: '"Tryouts" by Zombie Nation' },
+            { id: 'track12', start: 1491, title: '"Nothing But Pleasure" by Tom Rowland' },
+            { id: 'track13', start: 1644, title: '"Arp #1" by Jackson and his Computerband' },
+            { id: 'intms', start: 1704, title: 'Intermission' },
+            { id: 'track14', start: 1735, title: '"Synrise" by Goose (Soulwax remix)' },
+            { id: 'track15', start: 2037, title: '"Mr. Croissant Taker" by Transistorcake' },
+            { id: 'track16', start: 2098, title: '"Plush" by Tiga (Jacques Lu Cont Remix)' },
+            { id: 'track17', start: 2233, title: '"Shockwave" by The Hacker (Gesaffelstein Remix)' },
+            { id: 'track18', start: 2324, title: '"After You" by Pulp (Soulwax Remix)' }
+        ];
+
+
+        const audio = document.querySelector('audio');
+        audio.addEventListener('timeupdate', function () {
+            let t = audio.currentTime, a = -1;
+            tracks.forEach(e => {
+                const i = document.getElementById(e.id);
+                i.style.fontWeight = 'normal';
+                i.classList.remove('highlight');
+            });
+            tracks.forEach((e, i) => {
+                if (t >= e.start && (i === tracks.length - 1 || t < tracks[i + 1].start)) {
+                    a = i;
+                }
+            });
+            if (a !== -1) {
+                const e = tracks[a];
+                const i = document.getElementById(e.id);
+                i.style.fontWeight = 'bold';
+                i.classList.add('highlight');
+                document.title = `${e.title}`; // set title, mainly for Samsung AODs, now-playing cards, etc..
+            }
+        });
+        tracks.forEach(e => {
+            document.getElementById(e.id).addEventListener('click', () => {
+                audio.currentTime = e.start;
+                audio.play();
+            });
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            if (/Mobi|Android/i.test(navigator.userAgent)) {
+                console.log("[Device check] MOBILE DETECTED");
+                document.querySelectorAll(".navbar").forEach(e => {
+                    console.log("[Device check] DELETING NAVIGATION BAR");
+                    e.parentNode.removeChild(e);
+                });
+                document.querySelectorAll(".container").forEach(e => {
+                    console.log("[Device check] MOVING EVERYTHING");
+                    e.style.position = "relative";
+                    e.style.left = "0";
+                    e.style.marginLeft = "0";
+                });
+                const t = document.createElement("div");
+                t.textContent = "This site is not designed for mobile";
+                t.style.backgroundColor = "#f8d7da";
+                t.style.color = "#721c24";
+                t.style.padding = "10px";
+                t.style.textAlign = "center";
+                t.style.position = "fixed";
+                t.style.top = "0";
+                t.style.left = "0";
+                t.style.width = "100%";
+                t.style.zIndex = "1000";
+                document.body.insertBefore(t, document.body.firstChild);
+            } else {
+                console.log("[Device checker] NOT MOBILE");
+            }
+        });
+    </script>
+</body>
+
+</html>

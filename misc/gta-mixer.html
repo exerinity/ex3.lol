@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script>
+    if (window.location.host.includes('.pages.dev')) { window.location.href = `https://ex3.lol${window.location.pathname}`; }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Theft Auto Online music mixer - exerinity</title>
+    <link rel="stylesheet" href="/files/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h4><a href="/">exerinity</a></h4>
+        <br>
+        <ul>
+            <li><a href="/misc/email">email</a></li>
+            <li><a href="/photography">my photography</a></li>
+            <li><a href="/blog">blog</a></li>
+            <li><a href="/beamng">BeamNG.drive related stuff</a></li>
+            <li><a href="/">back</a></li>
+            <li><a href="/tools">tools</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+       <p>Please make sure all tracks are loaded (they should preload) before pressing a button. Additionally, when playing high intensities, you may need to press "quick lower volume", otherwise it will be very loud and distorted.<br>
+        Due to the way JavaScript executes, there may be slight delays when starting multiple tracks. Performance can vary by browser and system.<br><br>
+    UPDATE: As of 10/10/24, I converted all the tracks to MP3s, so they should load much better. And maybe actually work.<br>However, if you prefer quality, the original can be found <a href="?wav=true" style="text-decoration: underline;">here</a></p>
+            <audio src="https://files.ex3.lol/MPHEIST_TRACK3_1.mp3" controls loop preload id="1"></audio><br>
+            <audio src="https://files.ex3.lol/MPHEIST_TRACK3_2.mp3" controls loop preload id="2"></audio><br>
+            <audio src="https://files.ex3.lol/MPHEIST_TRACK3_3.mp3" controls loop preload id="3"></audio><br>
+            <audio src="https://files.ex3.lol/MPHEIST_TRACK3_4.mp3" controls loop preload id="4"></audio><br>
+            <audio src="https://files.ex3.lol/MPHEIST_TRACK3_5.mp3" controls loop preload id="5"></audio><br>
+            <audio src="https://files.ex3.lol/MPHEIST_TRACK3_6.mp3" controls loop preload id="6"></audio><br>
+            <audio src="https://files.ex3.lol/MPHEIST_TRACK3_7.mp3" controls loop preload id="7"></audio><br>
+            <audio src="https://files.ex3.lol/MPHEIST_TRACK3_8.mp3" controls loop preload id="8"></audio><br>
+            <button onclick="lowint()">Play Low Intensity 1</button>
+            <button onclick="lowint2()">Play Low Intensity 2</button>
+            <button onclick="lowint3()">Play Low Intensity 3</button><br><br>
+            <button onclick="medint()">Play Medium Intensity</button><br><br>
+            <button onclick="highint1()">Play High Intensity 1</button>
+            <button onclick="highint2()">Play High Intensity 2</button>
+            <button onclick="highint3()">Play High Intensity 3</button>
+            <button onclick="bridge()">"Bridge"</button><br><br>
+            <button onclick="playall()">Play all at once (for fun only)</button>
+            <button onclick="lower()" id="lowerbutton">Quick lower volume</button>
+            <button onclick="stop()">Stop</button>
+        </p>
+    </div>
+
+    <script>
+        function lowint() {stop();
+            document.getElementById('1').currentTime = 0;
+            document.getElementById('2').currentTime = 0;
+            document.getElementById('3').currentTime = 0;
+
+            document.getElementById('1').play();
+            document.getElementById('2').play();
+            document.getElementById('3').play();
+        }
+
+        function lowint2() {stop();
+            document.getElementById('1').currentTime = 0;
+            document.getElementById('2').currentTime = 0;
+            document.getElementById('3').currentTime = 0;
+
+            document.getElementById('1').play();
+            document.getElementById('2').play();
+            document.getElementById('3').play();
+
+            document.getElementById('8').currentTime = 0;
+            document.getElementById('8').volume = 0.2;
+
+            document.getElementById('8').play();
+        }
+
+        function lowint3() {stop();
+            document.getElementById('1').currentTime = 0;
+            document.getElementById('2').currentTime = 0;
+            document.getElementById('3').currentTime = 0;
+
+            document.getElementById('1').play();
+            document.getElementById('2').play();
+            document.getElementById('3').play();
+
+            document.getElementById('5').currentTime = 0;
+            document.getElementById('5').volume = 0.2;
+
+            document.getElementById('5').play();
+        }
+
+        function medint() {stop();
+            document.getElementById('2').currentTime = 0;
+            document.getElementById('4').currentTime = 0;
+            document.getElementById('6').currentTime = 0;
+
+            document.getElementById('2').play();
+            document.getElementById('4').play();
+            document.getElementById('6').play();
+        }
+
+        function highint1() {stop();
+            document.getElementById('4').currentTime = 0;
+            document.getElementById('7').currentTime = 0;
+            document.getElementById('6').currentTime = 0;
+
+            document.getElementById('4').play();
+            document.getElementById('7').play();
+            document.getElementById('6').play();
+        }
+
+        function highint2() {stop();
+            document.getElementById('4').currentTime = 0;
+            document.getElementById('7').currentTime = 0;
+            document.getElementById('6').currentTime = 0;
+            document.getElementById('5').currentTime = 0;
+
+            document.getElementById('4').play();
+            document.getElementById('7').play();
+            document.getElementById('6').play();
+            document.getElementById('5').play();
+        }
+
+        function highint3() {stop();
+            document.getElementById('4').currentTime = 0;
+            document.getElementById('7').currentTime = 0;
+            document.getElementById('6').currentTime = 0;
+            document.getElementById('5').currentTime = 0;
+            document.getElementById('8').currentTime = 0;
+
+            document.getElementById('4').play();
+            document.getElementById('7').play();
+            document.getElementById('6').play();
+            document.getElementById('5').play();
+            document.getElementById('8').play();
+        }
+
+        function playall() {stop();
+            alert("Please lower your volume, this will be very loud");
+            document.getElementById('1').play();
+            document.getElementById('2').play();
+            document.getElementById('3').play();
+            document.getElementById('4').play();
+            document.getElementById('5').play();
+            document.getElementById('6').play();
+            document.getElementById('7').play();
+            document.getElementById('8').play();
+        }
+
+        function lowerbuttontext() {
+            document.getElementById("lowerbutton").innerHTML = "Done";
+            setTimeout(function () { document.getElementById("lowerbutton").innerHTML = "Quick lower volume" }, 2500)
+        }
+
+        function lower() {
+           let num = 0.4;
+
+            document.getElementById("1").volume = num;
+            document.getElementById("2").volume = num;
+            document.getElementById("3").volume = num;
+            document.getElementById("4").volume = num;
+            document.getElementById("5").volume = num;
+            document.getElementById("6").volume = num;
+            document.getElementById("7").volume = num;
+            document.getElementById("8").volume = num;
+            lowerbuttontext();
+        }
+
+        function stop() {
+            for (let i = 1; i <= 8; i++) {
+                let audio = document.getElementById(i.toString());
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        }
+
+        function bridge() {stop();
+            document.getElementById('4').currentTime = 0;
+            document.getElementById('5').currentTime = 0;
+            document.getElementById('6').currentTime = 0;
+
+            document.getElementById('4').play();
+            document.getElementById('5').play();
+            document.getElementById('6').play();
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){/Mobi|Android/i.test(navigator.userAgent)&&(console.log("[Device check] MOBILE DETECTED"),document.querySelectorAll(".navbar").forEach(n=>(console.log("[Device check] DELETING NAVIGATION BAR"),n.parentNode.removeChild(n))),document.querySelectorAll(".container").forEach(n=>(console.log("[Device check] MOVING EVERYTHING"),n.style.position="relative",n.style.left="0",n.style.marginLeft="0")),t=document.createElement("div"),t.textContent="This site is not designed for mobile",t.style.backgroundColor="#f8d7da",t.style.color="#721c24",t.style.padding="10px",t.style.textAlign="center",t.style.position="fixed",t.style.top="0",t.style.left="0",t.style.width="100%",t.style.zIndex="1000",document.body.insertBefore(t,document.body.firstChild))||console.log("[Device checker] NOT MOBILE")});
+        </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'8e67c5b68c73e7ec',t:'MTczMjI2NjQ3OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
+</html>

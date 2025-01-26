@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script>
+    if (window.location.host.includes('.pages.dev')) { window.location.href = `https://ex3.lol${window.location.pathname}`; }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - exerinity</title>
+    <link rel="stylesheet" href="files/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="description" content="Whatever this page is supposed to be, it doesn't exist." />
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h4><a href="/">exerinity</a></h4>
+
+    </div>
+
+    <div class="container">
+        <h1>404 Not Found</h1>
+        <p id="text">The requested resource does not exist.</p>
+        <input type="text" name="url" placeholder="dir">
+        <button onclick="unlisted()">Go</button>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () { /Mobi|Android/i.test(navigator.userAgent) && (console.log("[Device check] MOBILE DETECTED"), document.querySelectorAll(".navbar").forEach(n => (console.log("[Device check] DELETING NAVIGATION BAR"), n.parentNode.removeChild(n))), document.querySelectorAll(".container").forEach(n => (console.log("[Device check] MOVING EVERYTHING"), n.style.position = "relative", n.style.left = "0", n.style.marginLeft = "0")), t = document.createElement("div"), t.textContent = "This site is not designed for mobile", t.style.backgroundColor = "#f8d7da", t.style.color = "#721c24", t.style.padding = "10px", t.style.textAlign = "center", t.style.position = "fixed", t.style.top = "0", t.style.left = "0", t.style.width = "100%", t.style.zIndex = "1000", document.body.insertBefore(t, document.body.firstChild)) || console.log("[Device checker] NOT MOBILE") });
+    </script>
+    <script>document.getElementById("text").innerHTML = `The resource <strong>"${window.location.pathname}"</strong> does not exist.` // showing path for js-enabled users
+        function unlisted() {
+            const url = document.querySelector("input[name=url]").value;
+            if (!url) return alert("Enter a resource");
+            window.location.href = `https://ex3.lol/${url}`;
+        }</script>
+
+
+</html>

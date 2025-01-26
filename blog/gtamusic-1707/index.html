@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> <script>
+    if (window.location.host.includes('.pages.dev')) { window.location.href = `https://ex3.lol${window.location.pathname}`; }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Theft Auto V music - exerinity</title>
+    <link rel="stylesheet" href="/files/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="description" content="How does it work? In GTA V, background music is quite interesting." />
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h4><a href="/">exerinity</a></h4>
+        <br>
+        <ul>
+            <li><a href="/misc/email">email</a></li>
+            <li><a href="/photography">my photography</a></li>
+            <li><a href="/blog">back to main page</a></li>
+            <li><a href="/beamng">BeamNG.drive related stuff</a></li>
+            <li><a href="/misc">miscellaneous pages</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <noscript>
+            <h1>Enable JavaScript</h1>
+            <p>This blog will not work without JavaScript</p>
+        </noscript>
+        <h1>Grand Theft Auto V music</h1>
+        <p>How does it work? In GTA V, background music is quite interesting.
+            <br>
+            Unlike most games, where it just loops (or plays) an already-mixed song, GTA V has individual instrument
+            files (8) to shift intensities dynamically.
+            <br>Here's an example: (please make sure all tracks are loaded)
+            <hr>
+            <audio src="https://files.ex3.lol/MPHEIST_TRACK3_1.wav" controls preload id="1"></audio><br>
+            <audio src="https://files.ex3.lol/MPHEIST_TRACK3_2.wav" controls preload id="2"></audio><br>
+            <audio src="https://files.ex3.lol/MPHEIST_TRACK3_3.wav" controls preload id="3"></audio><br>
+            <audio src="https://files.ex3.lol/MPHEIST_TRACK3_4.wav" controls preload id="4"></audio><br>
+            <audio src="https://files.ex3.lol/MPHEIST_TRACK3_5.wav" controls preload id="5"></audio><br>
+            <audio src="https://files.ex3.lol/MPHEIST_TRACK3_6.wav" controls preload id="6"></audio><br>
+            <audio src="https://files.ex3.lol/MPHEIST_TRACK3_7.wav" controls preload id="7"></audio><br>
+            <audio src="https://files.ex3.lol/MPHEIST_TRACK3_8.wav" controls preload id="8"></audio><br>
+            <button onclick="lowint()">Play Low Intensity</button>
+            <button onclick="highint1()">Play High Intensity 1</button>
+            <button onclick="highint2()">Play High Intensity 2</button>
+            <button onclick="highint3()">Play High Intensity 3</button>
+            <button onclick="playall()">Play all at once (for fun only)</button>
+            <button onclick="lower()" id="lowerbutton">Quick lower volume</button>
+            <hr>
+            <p>Now that's interesting. Yes, I did code this entire page for like 4 people to view it.<br>I don't really know what to say beyond here. Have fun mixing!</p>
+        </p>
+    </div>
+
+ <script>
+        function lowint() {
+            document.getElementById('1').currentTime = 0;
+            document.getElementById('2').currentTime = 0;
+            document.getElementById('3').currentTime = 0;
+
+            document.getElementById('1').play();
+            document.getElementById('2').play();
+            document.getElementById('3').play();
+        }
+
+        function highint1() {
+            document.getElementById('4').currentTime = 0;
+            document.getElementById('7').currentTime = 0;
+            document.getElementById('6').currentTime = 0;
+
+            document.getElementById('4').play();
+            document.getElementById('7').play();
+            document.getElementById('6').play();
+        }
+
+        function highint2() {
+            document.getElementById('4').currentTime = 0;
+            document.getElementById('7').currentTime = 0;
+            document.getElementById('6').currentTime = 0;
+            document.getElementById('5').currentTime = 0;
+
+            document.getElementById('4').play();
+            document.getElementById('7').play();
+            document.getElementById('6').play();
+            document.getElementById('5').play();
+        }
+
+        function highint3() {
+            document.getElementById('4').currentTime = 0;
+            document.getElementById('7').currentTime = 0;
+            document.getElementById('6').currentTime = 0;
+            document.getElementById('5').currentTime = 0;
+            document.getElementById('8').currentTime = 0;
+
+            document.getElementById('4').play();
+            document.getElementById('7').play();
+            document.getElementById('6').play();
+            document.getElementById('5').play();
+            document.getElementById('8').play();
+        }
+
+        function playall() {
+            alert("Please lower your volume, this will be very loud")
+            document.getElementById('1').play();
+            document.getElementById('2').play();
+            document.getElementById('3').play();
+            document.getElementById('4').play();
+            document.getElementById('5').play();
+            document.getElementById('6').play();
+            document.getElementById('7').play();
+            document.getElementById('8').play();
+        }
+
+        function lowerbuttontext() {
+            document.getElementById("lowerbutton").innerHTML = "Done";
+            setTimeout(function () { document.getElementById("lowerbutton").innerHTML = "Quick lower volume" }, 2500)
+        }
+
+        function lower() {
+            const num = prompt("To? (0 - 0.5 - 1, etc)");
+            if (isNaN(num)) return alert("Not a number");
+            if (num < 0.1 || num > 1) return alert("Volume too low or high");
+
+            document.getElementById("1").volume = num;
+            document.getElementById("2").volume = num;
+            document.getElementById("3").volume = num;
+            document.getElementById("4").volume = num;
+            document.getElementById("5").volume = num;
+            document.getElementById("6").volume = num;
+            document.getElementById("7").volume = num;
+            document.getElementById("8").volume = num;
+            lowerbuttontext();
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){/Mobi|Android/i.test(navigator.userAgent)&&(console.log("[Device check] MOBILE DETECTED"),document.querySelectorAll(".navbar").forEach(n=>(console.log("[Device check] DELETING NAVIGATION BAR"),n.parentNode.removeChild(n))),document.querySelectorAll(".container").forEach(n=>(console.log("[Device check] MOVING EVERYTHING"),n.style.position="relative",n.style.left="0",n.style.marginLeft="0")),t=document.createElement("div"),t.textContent="This site is not designed for mobile",t.style.backgroundColor="#f8d7da",t.style.color="#721c24",t.style.padding="10px",t.style.textAlign="center",t.style.position="fixed",t.style.top="0",t.style.left="0",t.style.width="100%",t.style.zIndex="1000",document.body.insertBefore(t,document.body.firstChild))||console.log("[Device checker] NOT MOBILE")});
+        </script>
+</body>
+
+</html>

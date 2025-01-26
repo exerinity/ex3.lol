@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script>
+    if (window.location.host.includes('.pages.dev')) { window.location.href = `https://ex3.lol${window.location.pathname}`; }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Stopwatch (click to start)</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #00FF00; 
+            cursor: pointer;
+        }
+        #stopwatch {
+            font-family: Verdana, sans-serif;
+            font-size: 48px;
+            color: white;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        }
+    </style>
+</head>
+<body>
+    <div id="stopwatch">00:00</div>
+
+    <script>
+        let startTime;
+        let interval;
+
+        function start() {
+            startTime = Date.now();
+            interval = setInterval(update, 1000);
+            document.body.removeEventListener('click', start); 
+            document.getElementById("title").innerHTML = 'Stopwatch (started)';
+        }
+
+        function update() {
+            const elapsed = Date.now() - startTime;
+            const minutes = Math.floor(elapsed / 60000);
+            const seconds = Math.floor((elapsed % 60000) / 1000);
+            document.getElementById('stopwatch').textContent = 
+                `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        document.body.addEventListener('click', start); 
+    </script>
+</body>
+</html>

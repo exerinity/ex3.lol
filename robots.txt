@@ -1,0 +1,28 @@
+#
+#  ______  _____  ______   _____  _______ _______   _______ _     _ _______
+# |_____/ |     | |_____] |     |    |    |______      |     \___/     |   
+# |    \_ |_____| |_____] |_____|    |    ______| .    |    _/   \_    |   
+#                                                                         
+#                                          for ex3.lol
+
+User-agent: *
+Disallow: /files/
+
+User-agent: bingbot
+Disallow: /
+
+User-agent: Applebot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: k2spider
+Disallow: /
+
+# There is no hard limit but if you are abusing something or sending requests crazily fast, you will be blocked.
+
+User-agent: ex3
+Allow: *
+# This is for my bot ^_^
+# as I strictly program where it can and cant go

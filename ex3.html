@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        if (window.location.host.includes('.pages.dev')) { window.location.href = `https://ex3.lol${window.location.pathname}`; }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3</title>
+    <meta name="title" content="exerinity" />
+    <meta name="description" content="The worst discord bot in the world" />
+    <meta property="og:type" content="discord bot" />
+    <meta property="og:url" content="https://ex3.lol/" />
+    <meta property="og:title" content="exerinity" />
+    <meta property="og:description" content="The worst discord bot in the world" />
+    <meta property="og:image" content="https://ex3.lol/favicon.ico" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ex3.lol/" />
+    <meta property="twitter:title" content="exerinity" />
+    <meta property="twitter:description" content="The worst discord bot in the world" />
+    <meta property="twitter:image" content="https://ex3.lol/favicon.ico" />
+    <link rel="stylesheet" href="/files/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h4><a href="/">exerinity</a></h4>
+        <br>
+        <ul>
+            <li><a href="/misc/email">email</a></li>
+            <li><a href="/photography">my photography</a></li>
+            <li><a href="/blog">blog</a></li>
+            <li><a href="/beamng">BeamNG.drive related stuff</a></li>
+            <li><a href="/misc">miscellaneous pages</a></li>
+            <li><a href="/tools">tools</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1>ex3</h1>
+        <p>A Discord bot with no targeted category of functionality. Meaning, it could do basically anything. It's not a
+            "music bot", or a "utility bot", it's just a "bot".</p>
+        <h3><a href="/invite">Invite</a></h3>
+        <hr>
+        <h2>Cool features</h2>
+        <ul>
+            <li>Useful commands like /time, /news, /number, /translate</li>
+            <li>An AI image generator that is virtually unlimited (suck on that MEE6)</li>
+            <li>Works everywhere (in DMs, group chat, other servers, etc)</li>
+            <li>Fun commands like /imgflip, /beamng, /dadjoke</li>
+            <li>Constantly being updated</li>
+        </ul>
+        <hr>
+        <h2>Disclaimer</h2>
+        <p>
+            The bot may contain commands that could be used to generate NSFW content. The bot is not designed to make
+            NSFW content and it solely relies on user input.<br>
+            If someone misuses the bot, server mods should handle it. It's like hitting someone with a hammer and
+            blaming the hammer.<br><br>
+            <strong>I want to make it clear that Discord allows server mods to manage where commands can be executed and
+                who can execute them.</strong>
+            <br><img src="https://img.ex3.lol/Discord_id47GVLHTS.png"><br>
+            <strong>Any kind of tool can be subject to misuse and this bot is no exception. However, if a user is
+                misusing it for stuff like gore, terrorism, rape, circumventing user blocks, or anything illegal, please
+                <a href="/misc/email">let me know</a> and I will blacklist them from using commands.</strong>
+            <br>If you aren't cool with this, don't utilize the app.
+        </p>
+        <h2>Privacy policy</h2>
+        <footer>(in a nutshell, full version soon)</footer>
+        <p>
+            The bot doesn't collect any data about you. The only data it collects is whenever you execute a command, an
+            increment is added to how many total commands have been executed.<br>
+            The data looks like this:
+        <pre>400</pre>
+        Just a number. That's all it is.<br>
+        And here's a basic demonstration on how it works:
+        <pre>
+    let init = loadcommands();
+    init += 1;
+    save(init);
+            </pre>
+            This occurs when ANYONE executes a command. It is the total count for everyone.
+            <br>
+            <p>However, the APIs I use in commands may have a different privacy policy. You should see /credits and consult the proper site's privacy policy. 
+           And finally, you shouldn't enter any sensitive info into it, regardless of how private it is.</p>
+        </p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () { /Mobi|Android/i.test(navigator.userAgent) && (console.log("[Device check] MOBILE DETECTED"), document.querySelectorAll(".navbar").forEach(n => (console.log("[Device check] DELETING NAVIGATION BAR"), n.parentNode.removeChild(n))), document.querySelectorAll(".container").forEach(n => (console.log("[Device check] MOVING EVERYTHING"), n.style.position = "relative", n.style.left = "0", n.style.marginLeft = "0")), t = document.createElement("div"), t.textContent = "This site is not designed for mobile", t.style.backgroundColor = "#f8d7da", t.style.color = "#721c24", t.style.padding = "10px", t.style.textAlign = "center", t.style.position = "fixed", t.style.top = "0", t.style.left = "0", t.style.width = "100%", t.style.zIndex = "1000", document.body.insertBefore(t, document.body.firstChild)) || console.log("[Device checker] NOT MOBILE") });
+    </script>
+</body>
+
+</html>

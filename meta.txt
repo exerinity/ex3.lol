@@ -1,0 +1,15 @@
+<title>exerinity</title>
+<meta name="title" content="exerinity"/>
+<meta name="description" content="The worst website in the world"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ex3.lol/"/>
+<meta property="og:title" content="exerinity"/>
+<meta property="og:description" content="The worst website in the world"/>
+<meta property="og:image" content="https://ex3.lol/favicon.ico"/>
+
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:url" content="https://ex3.lol/"/>
+<meta property="twitter:title" content="exerinity"/>
+<meta property="twitter:description" content="The worst website in the world"/>
+<meta property="twitter:image" content="https://ex3.lol/favicon.ico"/>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Why are you here? Here as in the raw HTML? Looking for something?-->
+
+<head>
+    <script>
+        if (window.location.host.includes('.pages.dev')) { window.location.href = `https://ex3.lol${window.location.pathname}`; }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exerinity</title>
+    <meta name="title" content="exerinity" />
+    <meta name="description" content="The worst website in the world" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ex3.lol/" />
+    <meta property="og:title" content="exerinity" />
+    <meta property="og:description" content="The worst website in the world" />
+    <meta property="og:image" content="https://ex3.lol/favicon.ico" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ex3.lol/" />
+    <meta property="twitter:title" content="exerinity" />
+    <meta property="twitter:description" content="The worst website in the world" />
+    <meta property="twitter:image" content="https://ex3.lol/favicon.ico" />
+    <link rel="stylesheet" href="files/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!--cool icons-->
+</head>
+
+<body>
+    <div class="navbar">
+        <h4><a href="/">exerinity</a></h4>
+        <br>
+        <ul>
+            <li><a href="/misc/email">email</a></li>
+            <li><a href="/photography">my photography</a></li>
+            <li><a href="/blog">blog</a></li>
+            <li><a href="/beamng">BeamNG.drive related stuff</a></li>
+            <li><a href="/misc">miscellaneous pages</a></li>
+            <li><a href="/tools">tools</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h1 class="home_title" onclick="alert('What?')">Welcome to ex3.lol</h1>
+        <a href="bsky" class="button"><i class="fa-brands fa-bluesky" style="color: #1d9bf0"></i></a>
+        <a href="x" class="button"><i class="fa-brands fa-x-twitter" style="color: white;"></i></a>
+        <a href="youtube" class="button"><i class="fab fa-youtube" style="color:red"></i></a>
+        <a href="github" class="button"> <i class="fa-brands fa-github" style="color:rgb(255, 255, 255)"></i></a>
+        <a href="steam" class="button"><i class="fa-brands fa-steam" style="color:#0370a4"></i></a>
+        <a href="bandcamp" class="button"><i class="fa-brands fa-bandcamp" style="color:#1d9fc2"></i></a>
+        <a href="soundcloud" class="button"><i class="fa-brands fa-soundcloud" style="color:orange"></i></a>
+        <a href="socials" class="button"><i class="fa-solid fa-plus"></i></a>
+        <br>
+        <h2>Latest You<font class="tube">Tube</font> video</h2>
+        <iframe width="640" height="480" src="" id="emb" frameBorder="0">Loading...</iframe>
+        <noscript>
+            <h2>JavaScript is disabled</h2>
+            Some parts of this site won't work without it. Further, if you are on mobile, the site cannot be adjusted
+            for your device.
+        </noscript>
+        <p>This site was last updated <strong>26 January 2025</strong>:</p>
+        <ul>
+            <li>Published to GitHub</li>
+           <li>Made some small changes to the way mobile detection works</li>
+            <i style="font-size: 12px;">Anything past here has been truncated and moved <a href="changelog.txt"
+                    style="text-decoration: underline;">here</a></i>
+        </ul>
+        <h3>If you have an unlisted resource on this website, enter it below:</h3>
+        <input type="text" name="url" placeholder="dir">
+        <button onclick="unlisted()">Go</button>
+    </div>
+
+    <script>
+        //im sorry for all these dramatic ass logs lol
+        function unlisted() {
+            const url = document.querySelector("input[name=url]").value;
+            if (!url) {
+                console.warn('[BROWSER] No URL entered');
+                return alert('Enter a resource');
+            }
+            console.log(`[BROWSER] Sending to ${url}`);
+            window.location.href = `https://ex3.lol/${url}`;
+        }
+        console.warn("Foreword: If you see a billion errors, it's probably the YouTube embed. I test everything I change thoroughly before each publish.");
+        console.log(`
+    welcome to.........
+    
+    ######## ##     ##  #######      ##        #######  ##       
+    ##        ##   ##  ##     ##     ##       ##     ## ##       
+    ##         ## ##          ##     ##       ##     ## ##       
+    ######      ###     #######      ##       ##     ## ##       
+    ##         ## ##          ##     ##       ##     ## ##       
+    ##        ##   ##  ##     ## ### ##       ##     ## ##       
+    ######## ##     ##  #######  ### ########  #######  ######## 
+    
+    's console!
+            `);
+        console.log('[BROWSER] Locked and loaded!');
+        console.log('[DAEMON] Ready!');
+        console.log('[DAEMON] Loading everything...');
+/*shit*/document.addEventListener("DOMContentLoaded", function () { /Mobi|Android/i.test(navigator.userAgent) && (console.warn("[Device check] MOBILE DETECTED"), document.querySelectorAll(".navbar").forEach(n => (console.warn("[Device check] DELETING NAVIGATION BAR"), n.parentNode.removeChild(n))), document.querySelectorAll(".container").forEach(n => (console.warn("[Device check] MOVING EVERYTHING"), n.style.position = "relative", n.style.left = "0", n.style.marginLeft = "0")), t = document.createElement("div"), t.textContent = "This site is not designed for mobile", t.style.backgroundColor = "transparent", t.style.color = "white", t.style.padding = "10px", t.style.textAlign = "center", t.style.position = "fixed", t.style.top = "0", t.style.left = "0", t.style.width = "100%", t.style.zIndex = "1000", document.body.insertBefore(t, document.body.firstChild)) || console.log("[Device checker] NOT MOBILE") });
+        async function vids() {
+            console.log('[VID-CHECK] Checking for latest video...');
+            const url = `https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=UCUd0-VUXaGqF7cMeI18L35w`;
+            const response = await fetch(url);
+            const data = await response.json();
+            console.log('[VID-CHECK] Success, formatting...');
+            console.log(`[VID-CHECK] ${data.items[0].title}`);
+            const vid = data.items[0].guid.replace("yt:video:", "");
+            document.getElementById("emb").src = `https://www.youtube-nocookie.com/embed/${vid}`;
+            console.log('[VID-CHECK] Done');
+
+
+        }
+
+        vids();
+
+
+
+        setTimeout(() => {
+            console.log('[DAEMON] Finished');
+        }, 5500);
+    </script>
+
+</html>

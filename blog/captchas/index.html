@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> <script>
+    if (window.location.host.includes('.pages.dev')) { window.location.href = `https://ex3.lol${window.location.pathname}`; }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are captchas still worth it? - exerinity</title>
+    <link rel="stylesheet" href="/files/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="description" content="Are they?" />
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h4><a href="/">exerinity</a></h4>
+        <br>
+        <ul>
+            <li><a href="/misc/email">email</a></li>
+            <li><a href="/photography">my photography</a></li>
+            <li><a href="/blog">back to main page</a></li>
+            <li><a href="/beamng">BeamNG.drive related stuff</a></li>
+            <li><a href="/misc">miscellaneous pages</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+       <h1>Are captchas still worth it?</h1>
+       <p><strong>DISCLAIMER:</strong> I wrote this just for fun and to poke at captchas. I have the brain of a rock, and this is not a news source, so please don't take anything seriously here.</p>
+       <p>So, what are captchas for? To stop robots, I think. They are designed to prevent automated systems from accessing stuff.</p>
+       <p>But with the AI boom being bigger than ever, AI can now easily solve captchas (screenshots), puzzles, and those distorted texts.</p>
+       <hr>
+       <p>To start, I tested Chrome's Live Caption onto reCAPTCHA's audio captcha:</p>
+       <img src="audio1.png" width="500"><img src="audio2.png" width="500"><br>
+       <img src="audio3.png" width="500"><img src="audio4.png" width="500">
+       <p>It was correct.</p><br><br>
+       <p>Next, I tested GPT-4o with screenshots of hCaptcha - constantly getting harder to solve:</p>
+       <img src="gpt4-1.png" width="500"><img src="gpt4-2.png" width="500"><br>
+       <img src="gpt4-3.png" width="500">
+       <br><br>
+       <p>Finally, I tested Google Gemini:</p>
+       <img src="gemini.png" width="500">
+       <br><br>
+       <p>That was actually a 4, but whatever.</p>
+       <p>Now, I'm very confident it's not that simple. If you're going to make a AI powered captcha bypasser, at that point, wouldn't it be easier to just solve it yourself?<br></p><br><br>
+       <p><a href="https://twitter.com/endermanch/status/1795923893837824237" style="text-decoration: underline;">This tweet</a> by Enderman inspired me to make this. I might come back and write more to this later.</p>
+    </div>
+   <script>
+        document.addEventListener("DOMContentLoaded",function(){/Mobi|Android/i.test(navigator.userAgent)&&(console.log("[Device check] MOBILE DETECTED"),document.querySelectorAll(".navbar").forEach(n=>(console.log("[Device check] DELETING NAVIGATION BAR"),n.parentNode.removeChild(n))),document.querySelectorAll(".container").forEach(n=>(console.log("[Device check] MOVING EVERYTHING"),n.style.position="relative",n.style.left="0",n.style.marginLeft="0")),t=document.createElement("div"),t.textContent="This site is not designed for mobile",t.style.backgroundColor="#f8d7da",t.style.color="#721c24",t.style.padding="10px",t.style.textAlign="center",t.style.position="fixed",t.style.top="0",t.style.left="0",t.style.width="100%",t.style.zIndex="1000",document.body.insertBefore(t,document.body.firstChild))||console.log("[Device checker] NOT MOBILE")});
+        </script>
+</body>
+
+</html>

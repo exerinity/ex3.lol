@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script>
+    if (window.location.host.includes('.pages.dev')) { window.location.href = `https://ex3.lol${window.location.pathname}`; }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            background-color: rgb(0, 0, 0);
+            text-align: center;
+            cursor: pointer;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <p id="temp">Click to start</p>
+    <script>
+        function getRandomColor() {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            return `rgb(${r}, ${g}, ${b})`;
+        }
+
+        function startColorChange() {
+            document.getElementById('temp').remove();
+            setInterval(() => {
+                document.body.style.backgroundColor = getRandomColor();
+            }, 320);
+        }
+
+        document.body.addEventListener('click', startColorChange);
+    </script>
+</body>
+</html>
