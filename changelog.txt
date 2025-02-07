@@ -11,6 +11,8 @@
 Only logs from the previous months are here. For the current month, check the homepage.
 This log is preliminary; only documentating more major changes, and smaller fixes or changes probably aren't shown here.
 
+26 January 2025: Published to GitHub, made some small changes to the way mobile detection works
+
 29 December 2024: Made June's photography collection public domain  
 18 December 2024: Added ex3 (my Discord bot)  
 16 December 2024: Added the time display in the top-right corner  (and removed it promptly)
